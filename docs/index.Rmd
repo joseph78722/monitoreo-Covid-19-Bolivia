@@ -105,9 +105,9 @@ activos <- activos$active
 
 Bolivia registró en las últimas horas `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos casos de coronavirus, según el último reporte epidemiológico a nivel nacional.
 
-De acuerdo a las cifras, existe `r tail(total_Confirmados$Confirmados, 1)` casos acumulados en el país, de los cuales `r tail(activos, 1)` se mantienen activos.
+De acuerdo a las cifras, existe `r tail(total_Confirmados$Confirmados, 1)` casos de covid-19 acumulados en el país, de los cuales `r tail(activos, 1)` se mantienen activos.
 
-Asimismo, se reportaron `r max(nuevas_muertes, na.rm = FALSE)` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r tail(total_fallecidos$Fallecidos, 1)`. Por otra parte, la cantidad total pacientes recuperados llegó a `r tail(total_recuperados$Recuperados, 1)`. 
+Asimismo, se reportaron `r max(nuevas_muertes, na.rm = FALSE)` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r tail(total_fallecidos$Fallecidos, 1)`. Por otra parte, la cantidad total pacientes recuperados asciende a `r tail(total_recuperados$Recuperados, 1)`. 
 
 
 
@@ -146,5 +146,5 @@ barras
 
 ```
 
-
+> *Sistema de actualización elaborado por José Romero*
 
