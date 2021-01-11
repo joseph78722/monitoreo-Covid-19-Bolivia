@@ -1,0 +1,39 @@
+
+library(dygraphs)
+library(zoo)
+library(xts)
+library(readr)
+library(tidyverse)
+library(tidyverse)
+library(lubridate)
+library(htmltools)
+library(htmlwidgets)
+cambio_tipo_de_cambio <- read_csv("~/Downloads/cambio - cambio2.csv")
+
+nuevo <- cambio_tipo_de_cambio %>%
+  mutate(fecha = dmy(Fecha))
+
+nuevo <- nuevo %>% 
+  select(fecha, TCCOMPRA, TCVENTA, -Fecha)
+plot(nuevo)
+ head(nuevo)
+
+ cambio_compra_xts <-  xts(nuevo$TCCOMPRA, order.by = nuevo$fecha, frequency = 1)
+cambio_venta_xts <- xts(nuevo$TCVENTA, order.by = nuevo$fecha, frequency = 1) 
+ dinamico <- cbind(cambio_compra_xts, cambio_venta_xts)
+ 
+ grafico2 <- dygraph(dinamico, ylab = 'Cambio',
+                    main = 'Tipo de cambio') %>% 
+   dySeries('cambio_compra_xts', label = 'Compra') %>% 
+   dySeries('cambio_venta_xts', label = 'Venta') %>% 
+   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set2")) %>% 
+   dyHighlight(highlightCircleSize = 6, 
+               highlightSeriesBackgroundAlpha = 0.8,
+               highlightSeriesOpts = list(strokeWidth = 3),
+               hideOnMouseOut = FALSE) %>% 
+   dyRangeSelector(height = 20)
+ grafico2
+
+ saveWidget(grafico2, "grafico2.html", selfcontained = F, libdir = "lib")
+
+ 

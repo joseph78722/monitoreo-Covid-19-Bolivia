@@ -1,0 +1,32 @@
+{
+    "id": "1E6303F8",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1610376746340.0,
+    "source_on_save": false,
+    "relative_order": 9,
+    "properties": {
+        "expression": "Bolivia",
+        "caption": "Bolivia",
+        "totalObservations": "9",
+        "displayedObservations": "9",
+        "variables": "6",
+        "cacheKey": "495DED8D",
+        "object": "Bolivia",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=Bolivia&cache_key=495DED8D&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 0,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1610376746340,
+    "read_only": false,
+    "read_only_alternatives": []
+}

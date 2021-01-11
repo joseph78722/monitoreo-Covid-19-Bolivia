@@ -1,0 +1,150 @@
+---
+title: Perspectivas y contrastes
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+
+```{r setup, include = FALSE}
+library(dygraphs)
+library(readr)
+library(tidyverse)
+library(xts)
+library(plotly)
+library(ggthemes)
+library(readr)
+library(flexdashboard)
+library(viridis)
+library(hrbrthemes)
+library(highcharter)
+library(httr)
+library(jsonlite)
+##### Cargar datos
+Confirmados <- read_csv("/Users/jose/Monitoreo Covid-19 Bolivia/data/Confirmados.csv")
+Confirmados$Fecha <- as.Date(Confirmados$Fecha)
+
+Recuperados <- read_csv("/Users/jose/Monitoreo Covid-19 Bolivia/data/Recuperados.csv")
+Recuperados$Fecha <- as.Date(Recuperados$Fecha)
+
+Fallecidos <- read_csv("/Users/jose/Monitoreo Covid-19 Bolivia/data/Fallecidos.csv")
+Fallecidos$Fecha <- as.Date(Fallecidos$Fecha)
+
+Nuevos_casos <- read_csv("/Users/jose/Monitoreo Covid-19 Bolivia/data/Nuevos_casos.csv")
+Nuevos_casos$Fecha<- as.Date(Nuevos_casos$Fecha)
+####
+###### Cargar API
+ url = "https://covid-193.p.rapidapi.com/statistics"
+
+queryString <- list(country = "bolivia")
+
+headers = add_headers(
+  'x-rapidapi-host'= "covid-193.p.rapidapi.com",
+  'x-rapidapi-key'= "27116f90b8msh7152626f9b46b5ep16ab32jsn17e2accf574c"
+)
+
+API <- GET(url, query = queryString,  headers)
+###
+#####Agregar datos
+datos = fromJSON(rawToChar(API$content))
+datos <- datos$response
+fecha <- Sys.Date()
+acumulado <- datos$cases
+acumulado <- acumulado$total
+
+Agregar_confirmado <- data.frame("Fecha" = fecha, 
+                    "Confirmados" = acumulado)
+
+total_Confirmados <- rbind(Confirmados, Agregar_confirmado)
+total_Confirmados$Confirmados <- as.integer(total_Confirmados$Confirmados)
+setwd("/Users/jose/Monitoreo Covid-19 Bolivia/data")
+write.csv(total_Confirmados,"Confirmados.csv", row.names = FALSE)
+
+acumulado_fallecidos <-datos$deaths
+acumulado_fallecidos <-acumulado_fallecidos$total
+
+Agregar_fallecidos <- data.frame("Fecha" = fecha, 
+                    "Fallecidos" = acumulado_fallecidos)
+
+total_fallecidos <- rbind(Fallecidos, Agregar_fallecidos)
+
+write.csv(total_fallecidos,"Fallecidos.csv", row.names = FALSE)
+
+acumulado_recuperados <-datos$cases
+acumulado_recuperados <-acumulado_recuperados$recovered
+Agregar_recuperados <- data.frame("Fecha" = fecha, 
+                    "Recuperados" = acumulado_recuperados)
+total_recuperados <- rbind(Recuperados, Agregar_recuperados)
+total_recuperados$Recuperados <- as.integer(total_recuperados$Recuperados)
+write.csv(total_recuperados,"Recuperados.csv", row.names = FALSE)
+
+
+registro_nuevos <- datos$cases
+registro_nuevos$new <- substr(registro_nuevos$new, star=2, stop=5)
+
+registro_nuevos$new <- as.integer(registro_nuevos$new)
+nuevo <- registro_nuevos$new
+Agregar_nuevo <- data.frame("Fecha" = fecha, 
+                    "Nuevos_casos" = nuevo)
+nuevo_nuevos_casos<- rbind(Nuevos_casos, Agregar_nuevo) 
+write.csv(nuevo_nuevos_casos,"Nuevos_casos.csv", row.names = FALSE)
+
+
+nuevas_muertes <- datos$deaths
+nuevas_muertes$new <- substr(nuevas_muertes$new, star=2, stop=4)
+nuevas_muertes <- nuevas_muertes$new
+
+activos <- datos$cases
+activos <- activos$active
+
+    ```
+
+## Covid-19: Bolivia registra `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos contagios y los casos acumulados llegan a `r tail(total_Confirmados$Confirmados, 1)`
+
+`r paste0("Actualizado: ", Sys.time())`
+
+Bolivia registró en las últimas horas `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos casos de coronavirus, según el último reporte epidemiológico a nivel nacional.
+
+De acuerdo a las cifras, existe `r tail(total_Confirmados$Confirmados, 1)` casos de covid-19 acumulados en el país, de los cuales `r tail(activos, 1)` se mantienen activos.
+
+Asimismo, se reportaron `r max(nuevas_muertes, na.rm = FALSE)` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r tail(total_fallecidos$Fallecidos, 1)`. Por otra parte, la cantidad total pacientes recuperados asciende a `r tail(total_recuperados$Recuperados, 1)`. 
+
+
+
+```{r linea de tiempo, echo = FALSE}
+Confirmados_xts <- xts(total_Confirmados$Confirmados, order.by = total_Confirmados$Fecha, frequency = 1)
+Fallecidos_xts <- xts(total_fallecidos$Fallecidos, order.by = total_fallecidos$Fecha, frequency = 1)
+Recuperados_xts <- xts(total_recuperados$Recuperados, order.by = total_recuperados$Fecha, frequency = 1)
+dinamico <- cbind(Confirmados_xts, Fallecidos_xts, Recuperados_xts)
+
+grafico <- dygraph(dinamico, ylab = 'Cantidad',
+                   main = 'Acumulado de casos confirmados, recuperaciones y decesos') %>% 
+  dySeries('Confirmados_xts', label = 'Casos') %>% 
+  dySeries('Fallecidos_xts', label = 'Fallecidos') %>% 
+  dySeries('Recuperados_xts', label = 'Recuperados') %>% 
+  dyOptions(colors = c('#0037A2', 'Black', '#00B50C')) %>% 
+  dyRangeSelector(height = 20) %>% 
+   dyHighlight(highlightCircleSize = 6, 
+               highlightSeriesBackgroundAlpha = 0.8,
+               highlightSeriesOpts = list(strokeWidth = 3),
+               hideOnMouseOut = FALSE) %>% 
+  dyOptions(strokeWidth = 2, pointSize = 2)
+  
+grafico
+
+    ```
+
+
+
+```{r r nuevos casos, echo = FALSE}
+
+barras <- nuevo_nuevos_casos %>% 
+hchart(name = 'Nuevos casos', 'line', hcaes(x= 'Fecha', y= 'Nuevos_casos')) %>% 
+  hc_colors('#5FCAD8') %>% 
+  hc_title(text = "Nuevos casos a nivel nacional por fecha") 
+barras
+
+```
+
+
+

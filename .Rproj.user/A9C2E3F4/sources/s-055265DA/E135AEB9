@@ -1,0 +1,25 @@
+{
+    "id": "E135AEB9",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1610335039099.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "id": "7d84729a71954a389efbae9ad4334f88",
+        "name": "API",
+        "title": "API"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8104636957551981153,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1610335039099,
+    "read_only": false,
+    "read_only_alternatives": []
+}

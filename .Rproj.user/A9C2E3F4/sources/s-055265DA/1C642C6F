@@ -1,0 +1,25 @@
+{
+    "id": "1C642C6F",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1610374678838.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "id": "08a3b6a806ae48988b50039ccf4241da",
+        "name": "departamento",
+        "title": "departamento"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 46,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1610374678838,
+    "read_only": false,
+    "read_only_alternatives": []
+}

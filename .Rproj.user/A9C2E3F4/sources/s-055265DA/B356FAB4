@@ -1,0 +1,25 @@
+{
+    "id": "B356FAB4",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1610377629928.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "id": "84cc47717a4b408aba2388d906887151",
+        "name": "datos",
+        "title": "datos"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8766077907670623879,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1610377629928,
+    "read_only": false,
+    "read_only_alternatives": []
+}
