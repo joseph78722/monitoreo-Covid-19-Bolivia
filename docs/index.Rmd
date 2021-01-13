@@ -128,7 +128,8 @@ grafico <- dygraph(dinamico, ylab = 'Cantidad',
                highlightSeriesBackgroundAlpha = 0.8,
                highlightSeriesOpts = list(strokeWidth = 3),
                hideOnMouseOut = FALSE) %>% 
-  dyOptions(strokeWidth = 2, pointSize = 2)
+  dyOptions(strokeWidth = 2, pointSize = 2) %>% 
+    dyLegend(width = 600)
   
 grafico
 
