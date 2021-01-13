@@ -103,9 +103,9 @@ activos <- activos$active
 
 `r paste0("Actualizado: ", Sys.time())`
 
-Bolivia registró  esta jornada `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos casos de coronavirus, según datos del reporte epidemiológico dairio.
+Bolivia registró  esta jornada `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos casos de coronavirus, según datos del último reporte epidemiológico.
 
-De acuerdo a las cifras, existe `r tail(total_Confirmados$Confirmados, 1)` casos de covid-19 acumulados en el país, de los cuales `r tail(activos, 1)` se mantienen activos.
+De este modo, los casos confirmados en el país llegaron a un total de `r tail(total_Confirmados$Confirmados, 1)` , de los cuales `r tail(activos, 1)` se mantienen activos.
 
 Asimismo, se informó sobre `r max(nuevas_muertes, na.rm = FALSE)` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r tail(total_fallecidos$Fallecidos, 1)`. Por otra parte, la cantidad total pacientes recuperados hasta la fecha es de `r tail(total_recuperados$Recuperados, 1)`. 
 
