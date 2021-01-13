@@ -3,7 +3,9 @@ library(shiny)
 library(git2r)
 library(usethis)
 setwd("/Users/jose/Monitoreo Covid-19 Bolivia/docs")
-HTML(markdown::markdownToHTML(knit('index.rmd', quiet = TRUE)))
+rmarkdown::render("index.Rmd")
+
+
 repo <-  repository()
 add(repo, "*")
 
