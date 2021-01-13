@@ -1,5 +1,3 @@
-library(knitr)
-library(shiny)
 library(git2r)
 library(usethis)
 setwd("/Users/jose/Monitoreo Covid-19 Bolivia/docs")

@@ -103,7 +103,7 @@ activos <- activos$active
 
 `r paste0("Actualizado: ", Sys.time())`
 
-Bolivia registró  esta jornada `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos casos de coronavirus, según el reporte epidemiológico de la presente jornada.
+Bolivia registró  esta jornada `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos casos de coronavirus, según los datos del reporte epidemiológico.
 
 De este modo, el acumulado de casos de confirmados asciende a `r tail(total_Confirmados$Confirmados, 1)`, de los cuales `r tail(activos, 1)` se mantienen activos.
 
