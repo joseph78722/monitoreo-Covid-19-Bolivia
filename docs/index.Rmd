@@ -124,7 +124,7 @@ grafico <- dygraph(dinamico, ylab = 'Cantidad',
   dySeries('Recuperados_xts', label = 'Recuperados') %>% 
   dyOptions(colors = c('#0037A2', 'Black', '#00B50C')) %>% 
   dyRangeSelector(height = 20) %>% 
-   dyHighlight(highlightCircleSize = 6, 
+   dyHighlight(highlightCircleSize = 4, 
                highlightSeriesBackgroundAlpha = 0.8,
                highlightSeriesOpts = list(strokeWidth = 3),
                hideOnMouseOut = FALSE) %>% 
