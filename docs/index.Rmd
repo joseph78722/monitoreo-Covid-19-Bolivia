@@ -103,7 +103,7 @@ activos <- activos$active
 
 `r paste0("Actualizado: ", Sys.time())`
 
-Bolivia registró  esta jornada `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos casos de coronavirus, según los datos del reporte epidemiológico.De este modo, el acumulado de contagios confirmados asciende a `r tail(total_Confirmados$Confirmados, 1)`, de los cuales `r tail(activos, 1)` se mantienen activos.
+Bolivia registró  esta jornada `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos casos de coronavirus, según los datos del reporte epidemiológico. De este modo, el acumulado de contagios confirmados asciende a `r tail(total_Confirmados$Confirmados, 1)`, de los cuales `r tail(activos, 1)` se mantienen activos.
 
 Asimismo, se informó sobre `r max(nuevas_muertes, na.rm = FALSE)` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r tail(total_fallecidos$Fallecidos, 1)`.
 
