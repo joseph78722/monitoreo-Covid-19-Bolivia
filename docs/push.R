@@ -1,6 +1,8 @@
 library(git2r)
 library(usethis)
 setwd("/Users/jose/Monitoreo Covid-19 Bolivia/docs")
+
+
 rmarkdown::render("index.Rmd")
 
 
@@ -10,4 +12,6 @@ add(repo, "*")
 commit(repo, message = "nuevo")
 cred <- cred_token()
 push(repo, credentials = cred)
+
+pandoc_available(version = NULL, error = FALSE)
 
