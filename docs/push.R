@@ -1,5 +1,6 @@
 library(git2r)
 library(usethis)
+
 setwd("/Users/jose/Monitoreo Covid-19 Bolivia/docs")
 
 
