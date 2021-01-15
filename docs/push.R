@@ -1,6 +1,9 @@
 library(git2r)
 library(usethis)
 
+Sys.setenv(RSTUDIO_PANDOC="/Applications/RStudio.app/Contents/MacOS/pandoc")
+
+
 setwd("/Users/jose/Monitoreo Covid-19 Bolivia/docs")
 
 
@@ -14,5 +17,4 @@ commit(repo, message = "nuevo")
 cred <- cred_token()
 push(repo, credentials = cred)
 
-pandoc_available(version = NULL, error = FALSE)
 
