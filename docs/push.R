@@ -7,7 +7,7 @@ Sys.setenv(RSTUDIO_PANDOC="/Applications/RStudio.app/Contents/MacOS/pandoc")
 setwd("/Users/jose/Monitoreo Covid-19 Bolivia/docs")
 
 
-rmarkdown::render("index.Rmd")
+rmarkdown::render("index.Rmd", encoding="UTF-8")
 
 
 repo <-  repository()
