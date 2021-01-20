@@ -10,7 +10,7 @@ output:
 
 ## Covid-19: Bolivia registra 2357 nuevos contagios y los casos acumulados llegan a 191090
 
-Actualizado: 2021-01-19 22:22:27
+Actualizado: 2021-01-19 22:24:08
 
 
 Bolivia registró  esta jornada 2357 nuevos casos de coronavirus, según los datos del reporte epidemiológico. De este modo, el acumulado de contagios confirmados asciende a 191090, de los cuales 35831 se mantienen activos.
