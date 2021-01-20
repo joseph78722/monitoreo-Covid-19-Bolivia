@@ -119,7 +119,7 @@ Recuperados_xts <- xts(total_recuperados$Recuperados, order.by = total_recuperad
 dinamico <- cbind(Confirmados_xts, Fallecidos_xts, Recuperados_xts)
 
 grafico <- dygraph(dinamico, ylab = 'Cantidad',
-                   main = 'Acumulado de casos confirmados, recuperaciones y decesos') %>% 
+                   main = 'Acumulado de casos confirmados, recuperaciones y decesos', height='500px', width = "100%") %>% 
   dySeries('Confirmados_xts', label = 'Casos') %>% 
   dySeries('Fallecidos_xts', label = 'Fallecidos') %>% 
   dySeries('Recuperados_xts', label = 'Recuperados') %>% 
