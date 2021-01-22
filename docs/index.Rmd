@@ -99,7 +99,7 @@ activos <- activos$active
 
     ```
 
-## Covid-19: `r if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), "Bolivia registra un récord de", "Bolivia registra")` `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos contagios y los casos acumulados llegan a `r tail(total_Confirmados$Confirmados, 1)`
+## Covid-19: `r if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), print("Bolivia registra un récord de", encoding = "UTF-8"), print("Bolivia registra", encoding = "UTF-8"))` `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos contagios y los casos acumulados llegan a `r tail(total_Confirmados$Confirmados, 1)`
 
 `r paste0("Actualizado: ", Sys.time())`
 
