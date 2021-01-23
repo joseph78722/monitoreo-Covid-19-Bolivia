@@ -1,6 +1,7 @@
 library(git2r)
 library(usethis)
 
+
 Sys.setenv(RSTUDIO_PANDOC="/Applications/RStudio.app/Contents/MacOS/pandoc")
 
 
