@@ -1,6 +1,8 @@
 library(git2r)
 library(usethis)
 
+Sys.setlocale("LC_CTYPE", "")
+
 
 Sys.setenv(RSTUDIO_PANDOC="/Applications/RStudio.app/Contents/MacOS/pandoc")
 
