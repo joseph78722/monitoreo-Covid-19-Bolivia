@@ -941,3 +941,4 @@ Output created: index.html
 Warning message:
 In in_dir(input_dir(), evaluate(code, envir = env, new_device = FALSE,  :
   You changed the working directory to /Users/jose/Monitoreo Covid-19 Bolivia/data (probably via setwd()). It will be restored to /Users/jose/Monitoreo Covid-19 Bolivia/docs. See the Note section in ?knitr::knit
+[beb279e] 2021-01-26: nuevo
