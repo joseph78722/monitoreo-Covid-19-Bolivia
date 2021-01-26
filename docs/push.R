@@ -1,16 +1,14 @@
 library(git2r)
 library(usethis)
+library(rmarkdown)
+library(knitr)
 
-Sys.setlocale("LC_CTYPE", "")
-
+setwd("/Users/jose/Monitoreo Covid-19 Bolivia/docs")
 
 Sys.setenv(RSTUDIO_PANDOC="/Applications/RStudio.app/Contents/MacOS/pandoc")
 
 
-setwd("/Users/jose/Monitoreo Covid-19 Bolivia/docs")
-
-
-rmarkdown::render("index.Rmd", encoding="UTF-8")
+rmarkdown::render("index.Rmd", encoding='UTF-8')
 
 
 repo <-  repository()
