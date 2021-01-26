@@ -1,10 +1,12 @@
 ---
 title: Perspectivas y contrastes
-output: html_document
+output:
+    prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
 ---
 
 ```{r setup, include = FALSE}
-Sys.setlocale("LC_CTYPE", "")
 library(dygraphs)
 library(readr)
 library(tidyverse)
@@ -109,25 +111,22 @@ Dato_nuevos_casos <- as.integer(Dato_nuevos_casos)
 Dato_acumulado<- tail(total_Confirmados$Confirmados, 1)
 Dato_acumulado <- as.integer(Dato_acumulado)
 
-Lead_nuevos_casos <- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), sprintf("Bolivia registró esta joranada un récord de"), sprintf("Bolivia registró esta jornada"))
+Lead_nuevos_casos <- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), sprintf("Bolivia registra esta joranada un récord de"), sprintf("Bolivia registra esta jornada"))
 Datos_nuevas_muertes <- max(nuevas_muertes, na.rm = FALSE)
 Datos_nuevas_muertes <- as.integer(Datos_nuevas_muertes)
 Datos_recuperados <- tail(total_recuperados$Recuperados, 1)
 Datos_recuperados <- as.integer(Datos_recuperados)
-tilde <- "río"
-tilde2 <- stri_enc_toutf8(tilde, is_unknown_8bit = FALSE, validate = FALSE)
     ```
 
 ## Covid-19: `r Titulo_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=" ")` nuevos contagios y los casos acumulados llegan a `r format(Dato_acumulado, digits=1, big.mark=" ")`
 
 `r paste0("Actualizado: ", Sys.time())`
 
-`r tilde2`
-`r Lead_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=" ")` nuevos casos de coronavirus, según los datos del reporte epidemiológico. De este modo, el acumulado de contagios confirmados asciende a `r format(Dato_acumulado, digits=1, big.mark=" ")`, de los cuales `r format(activos, digits=1, big.mark=" ")` se mantienen activos.
+`r Lead_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=".")` nuevos casos de coronavirus, según los datos del reporte epidemiológico. De este modo, el acumulado de contagios confirmados asciende a `r format(Dato_acumulado, digits=1, big.mark=".")`, de los cuales `r format(activos, digits=1, big.mark=".")` se mantienen activos.
 
-Asimismo, se informó sobre `r format(Datos_nuevas_muertes, digits=1, big.mark=" ")` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r format(Dato_total_muertos, digits=1, big.mark=" ")`.
+Asimismo, se informó sobre `r format(Datos_nuevas_muertes, digits=1, big.mark=".")` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r format(Dato_total_muertos, digits=1, big.mark=".")`.
 
-Por otra parte, la cantidad total de personas recuperadas hasta la fecha es de `r format(Datos_recuperados, digits=1, big.mark=" ")`. 
+Por otra parte, la cantidad total de personas recuperadas hasta la fecha es de `r format(Datos_recuperados, digits=1, big.mark=".")`. 
 
 
 
