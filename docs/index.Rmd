@@ -17,6 +17,8 @@ library(hrbrthemes)
 library(highcharter)
 library(httr)
 library(jsonlite)
+
+options(encoding="utf-8")
 ##### Cargar datos
 Confirmados <- read_csv("/Users/jose/Monitoreo Covid-19 Bolivia/data/Confirmados.csv")
 Confirmados$Fecha <- as.Date(Confirmados$Fecha)
@@ -93,19 +95,35 @@ nuevas_muertes <- nuevas_muertes$new
 
 activos <- datos$cases
 activos <- activos$active
+activos <- as.integer(activos)
 
+Dato_total_muertos <- tail(total_fallecidos$Fallecidos, 1)
+Dato_total_muertos <- as.integer(Dato_total_muertos)
+Titulo_nuevos_casos<- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), print("Bolivia registra un récord de", encoding = "UTF-8"), print("Bolivia registra", encoding = "UTF-8"))
+
+Dato_nuevos_casos <- tail(nuevo_nuevos_casos$Nuevos_casos, 1)
+Dato_nuevos_casos <- as.integer(Dato_nuevos_casos)
+
+Dato_acumulado<- tail(total_Confirmados$Confirmados, 1)
+Dato_acumulado <- as.integer(Dato_acumulado)
+
+Lead_nuevos_casos <- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), print("Bolivia registró esta joranada un récord de", encoding = "UTF-8"), print("Bolivia registró esta jornada", encoding = "UTF-8"))
+Datos_nuevas_muertes <- max(nuevas_muertes, na.rm = FALSE)
+Datos_nuevas_muertes <- as.integer(Datos_nuevas_muertes)
+Datos_recuperados <- tail(total_recuperados$Recuperados, 1)
+Datos_recuperados <- as.integer(Datos_recuperados)
     ```
 
-## Covid-19: `r if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), print("Bolivia registra un récord de", encoding = "UTF-8"), print("Bolivia registra", encoding = "UTF-8"))` `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos contagios y los casos acumulados llegan a `r tail(total_Confirmados$Confirmados, 1)`
+## Covid-19: `r Titulo_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=".")` nuevos contagios y los casos acumulados llegan a `r format(Dato_acumulado, digits=1, big.mark=".")`
 
 `r paste0("Actualizado: ", Sys.time())`
 
 
-`r if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), print("Bolivia registró esta joranada un récord de", encoding = "UTF-8"), print("Bolivia registró esta jornada", encoding = "UTF-8"))` `r tail(nuevo_nuevos_casos$Nuevos_casos, 1)` nuevos casos de coronavirus, según los datos del reporte epidemiológico. De este modo, el acumulado de contagios confirmados asciende a `r tail(total_Confirmados$Confirmados, 1)`, de los cuales `r tail(activos, 1)` se mantienen activos.
+`r Lead_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=".")` nuevos casos de coronavirus, según los datos del reporte epidemiológico. De este modo, el acumulado de contagios confirmados asciende a `r format(Dato_acumulado, digits=1, big.mark=".")`, de los cuales `r format(activos, digits=1, big.mark=".")` se mantienen activos.
 
-Asimismo, se informó sobre `r max(nuevas_muertes, na.rm = FALSE)` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r max(total_fallecidos$Fallecidos, 1)`.
+Asimismo, se informó sobre `r format(Datos_nuevas_muertes, digits=1, big.mark=".")` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r format(Dato_total_muertos, digits=1, big.mark=".")`.
 
-Por otra parte, la cantidad total de personas recuperadas hasta la fecha es de `r tail(total_recuperados$Recuperados, 1)`. 
+Por otra parte, la cantidad total de personas recuperadas hasta la fecha es de `r format(Datos_recuperados, digits=1, big.mark=".")`. 
 
 
 
