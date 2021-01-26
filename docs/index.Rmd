@@ -18,7 +18,7 @@ library(highcharter)
 library(httr)
 library(jsonlite)
 
-options(encoding="utf-8")
+
 ##### Cargar datos
 Confirmados <- read_csv("/Users/jose/Monitoreo Covid-19 Bolivia/data/Confirmados.csv")
 Confirmados$Fecha <- as.Date(Confirmados$Fecha)
