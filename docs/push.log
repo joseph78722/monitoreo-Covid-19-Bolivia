@@ -3021,3 +3021,43 @@ Output created: index.html
 Warning message:
 In in_dir(input_dir(), evaluate(code, envir = env, new_device = FALSE,  :
   You changed the working directory to /Users/jose/Monitoreo Covid-19 Bolivia/data (probably via setwd()). It will be restored to /Users/jose/Monitoreo Covid-19 Bolivia/docs. See the Note section in ?knitr::knit
+[421e18a] 2021-01-26: nuevo
+
+
+processing file: index.Rmd
+  |                                                                              |                                                                      |   0%  |                                                                              |..........                                                            |  14%
+  ordinary text without R code
+
+  |                                                                              |....................                                                  |  29%
+label: setup (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |                                                                              |..............................                                        |  43%
+   inline R code fragments
+
+  |                                                                              |........................................                              |  57%
+label: linea de tiempo (with options) 
+List of 1
+ $ echo: logi FALSE
+
+  |                                                                              |..................................................                    |  71%
+  ordinary text without R code
+
+  |                                                                              |............................................................          |  86%
+label: r nuevos casos (with options) 
+List of 1
+ $ echo: logi FALSE
+
+  |                                                                              |......................................................................| 100%
+  ordinary text without R code
+
+
+output file: index.knit.md
+
+/Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS index.utf8.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output index.html --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/lua/pagebreak.lua --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/lua/latex-div.lua --email-obfuscation none --self-contained --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmd/h/default.html --no-highlight --variable highlightjs=1 --variable 'theme:bootstrap' --include-in-header /tmp/RtmpmZWQG3/rmarkdown-str210d52c82bf5.html --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' 
+
+Output created: index.html
+Warning message:
+In in_dir(input_dir(), evaluate(code, envir = env, new_device = FALSE,  :
+  You changed the working directory to /Users/jose/Monitoreo Covid-19 Bolivia/data (probably via setwd()). It will be restored to /Users/jose/Monitoreo Covid-19 Bolivia/docs. See the Note section in ?knitr::knit
