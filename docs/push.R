@@ -3,13 +3,15 @@ library(usethis)
 library(rmarkdown)
 library(knitr)
 
+
 setwd("/Users/jose/Monitoreo Covid-19 Bolivia/docs")
-Sys.setlocale("LC_CTYPE", "")
 
 Sys.setenv(RSTUDIO_PANDOC="/Applications/RStudio.app/Contents/MacOS/pandoc")
 
+options(encoding = "native.enc")       
 
 rmarkdown::render("index.Rmd", encoding='UTF-8')
+
 
 
 repo <-  repository()
