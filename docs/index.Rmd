@@ -4,6 +4,7 @@ output: html_document
 ---
 
 ```{r setup, include = FALSE}
+Sys.setlocale("LC_CTYPE", "")
 library(dygraphs)
 library(readr)
 library(tidyverse)
