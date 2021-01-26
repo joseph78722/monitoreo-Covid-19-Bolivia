@@ -108,7 +108,7 @@ Dato_nuevos_casos <- as.integer(Dato_nuevos_casos)
 Dato_acumulado<- tail(total_Confirmados$Confirmados, 1)
 Dato_acumulado <- as.integer(Dato_acumulado)
 
-Lead_nuevos_casos <- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), "Bolivia registró esta joranada un récord de", "Bolivia registró esta jornada")
+Lead_nuevos_casos <- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), sprintf("Bolivia registró esta joranada un récord de"), sprintf("Bolivia registró esta jornada"))
 Datos_nuevas_muertes <- max(nuevas_muertes, na.rm = FALSE)
 Datos_nuevas_muertes <- as.integer(Datos_nuevas_muertes)
 Datos_recuperados <- tail(total_recuperados$Recuperados, 1)
