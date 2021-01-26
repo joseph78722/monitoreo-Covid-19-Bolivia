@@ -119,7 +119,7 @@ Datos_recuperados <- as.integer(Datos_recuperados)
 `r paste0("Actualizado: ", Sys.time())`
 
 
-`r print(Lead_nuevos_casos)` `r format(Dato_nuevos_casos, digits=1, big.mark=" ")` nuevos casos de coronavirus, según los datos del reporte epidemiológico. De este modo, el acumulado de contagios confirmados asciende a `r format(Dato_acumulado, digits=1, big.mark=" ")`, de los cuales `r format(activos, digits=1, big.mark=" ")` se mantienen activos.
+`r Lead_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=" ")` nuevos casos de coronavirus, según los datos del reporte epidemiológico. De este modo, el acumulado de contagios confirmados asciende a `r format(Dato_acumulado, digits=1, big.mark=" ")`, de los cuales `r format(activos, digits=1, big.mark=" ")` se mantienen activos.
 
 Asimismo, se informó sobre `r format(Datos_nuevas_muertes, digits=1, big.mark=" ")` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r format(Dato_total_muertos, digits=1, big.mark=" ")`.
 
