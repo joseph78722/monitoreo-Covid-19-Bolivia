@@ -7994,3 +7994,4 @@ Warning messages:
   'big.mark' and 'decimal.mark' are both '.', which could be confusing
 9: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
   'big.mark' and 'decimal.mark' are both '.', which could be confusing
+[c94258e] 2021-01-27: nuevo

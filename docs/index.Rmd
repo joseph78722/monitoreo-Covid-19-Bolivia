@@ -116,7 +116,7 @@ Datos_nuevas_muertes <- max(nuevas_muertes, na.rm = FALSE)
 Datos_nuevas_muertes <- as.integer(Datos_nuevas_muertes)
 Datos_recuperados <- tail(total_recuperados$Recuperados, 1)
 Datos_recuperados <- as.integer(Datos_recuperados)
-    ```
+```
 
 ## Covid-19: `r Titulo_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=".")` nuevos contagios y los casos acumulados llegan a `r format(Dato_acumulado, digits=1, big.mark=".")`
 
@@ -126,9 +126,7 @@ Datos_recuperados <- as.integer(Datos_recuperados)
 
 Asimismo, se informó sobre `r format(Datos_nuevas_muertes, digits=1, big.mark=".")` nuevos decesos a causa de esta enfermedad, con lo cual el total de fallecidos es de `r format(Dato_total_muertos, digits=1, big.mark=".")`.
 
-Por otra parte, la cantidad total de personas recuperadas hasta la fecha es de `r format(Datos_recuperados, digits=1, big.mark=".")`. 
-
-
+Por otra parte, la cantidad total de personas recuperadas hasta la fecha es de `r format(Datos_recuperados, digits=1, big.mark=".")`.
 
 ```{r linea de tiempo, echo = FALSE}
 Confirmados_xts <- xts(total_Confirmados$Confirmados, order.by = total_Confirmados$Fecha, frequency = 1)
@@ -152,9 +150,7 @@ grafico <- dygraph(dinamico, ylab = 'Cantidad',
   
 grafico
 
-    ```
-
-
+```
 
 ```{r r nuevos casos, echo = FALSE}
 
@@ -167,4 +163,3 @@ barras
 ```
 
 > *Sistema de actualización elaborado por José Romero*
-
