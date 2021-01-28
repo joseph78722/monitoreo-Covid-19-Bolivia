@@ -103,7 +103,7 @@ activos <- as.integer(activos)
 
 Dato_total_muertos <- tail(total_fallecidos$Fallecidos, 1)
 Dato_total_muertos <- as.integer(Dato_total_muertos)
-Titulo_nuevos_casos<- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), print("Bolivia registra récord de", encoding = "UTF-8"), print("Bolivia registra", encoding = "UTF-8"))
+Titulo_nuevos_casos<- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), print("Bolivia registra récord diario con", encoding = "UTF-8"), print("Bolivia registra", encoding = "UTF-8"))
 
 Dato_nuevos_casos <- tail(nuevo_nuevos_casos$Nuevos_casos, 1)
 Dato_nuevos_casos <- as.integer(Dato_nuevos_casos)
@@ -118,7 +118,7 @@ Datos_recuperados <- tail(total_recuperados$Recuperados, 1)
 Datos_recuperados <- as.integer(Datos_recuperados)
 ```
 
-## Covid-19: `r Titulo_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=".")` nuevos contagios y los casos acumulados llegan a `r format(Dato_acumulado, digits=1, big.mark=".")`
+## Covid-19: `r Titulo_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=".")`  nuevos contagios y los casos acumulados llegan a `r format(Dato_acumulado, digits=1, big.mark=".")`
 
 `r paste0("Actualizado: ", Sys.time())`
 
