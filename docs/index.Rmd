@@ -103,7 +103,7 @@ activos <- as.integer(activos)
 
 Dato_total_muertos <- tail(total_fallecidos$Fallecidos, 1)
 Dato_total_muertos <- as.integer(Dato_total_muertos)
-Titulo_nuevos_casos<- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), print("Bolivia registra un récord de", encoding = "UTF-8"), print("Bolivia registra", encoding = "UTF-8"))
+Titulo_nuevos_casos<- if_else(max(nuevo_nuevos_casos$Nuevos_casos) == tail(nuevo_nuevos_casos$Nuevos_casos, 1), print("Bolivia registra récord de", encoding = "UTF-8"), print("Bolivia registra", encoding = "UTF-8"))
 
 Dato_nuevos_casos <- tail(nuevo_nuevos_casos$Nuevos_casos, 1)
 Dato_nuevos_casos <- as.integer(Dato_nuevos_casos)
