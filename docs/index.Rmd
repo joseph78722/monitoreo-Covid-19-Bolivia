@@ -118,7 +118,7 @@ Datos_recuperados <- tail(total_recuperados$Recuperados, 1)
 Datos_recuperados <- as.integer(Datos_recuperados)
 ```
 
-## Covid-19: `r Titulo_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=".")`  nuevos contagios y los casos acumulados llegan a `r format(Dato_acumulado, digits=1, big.mark=".")`
+## Covid-19: `r Titulo_nuevos_casos` `r format(Dato_nuevos_casos, digits=1, big.mark=".")` nuevos contagios y los casos acumulados llegan a `r format(Dato_acumulado, digits=1, big.mark=".")`
 
 `r paste0("Actualizado: ", Sys.time())`
 
