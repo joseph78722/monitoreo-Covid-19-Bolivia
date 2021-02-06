@@ -8386,3 +8386,59 @@ Warning messages:
   'big.mark' and 'decimal.mark' are both '.', which could be confusing
 9: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
   'big.mark' and 'decimal.mark' are both '.', which could be confusing
+[aa8c457] 2021-02-04: nuevo
+
+
+processing file: index.Rmd
+  |                                                                              |                                                                      |   0%  |                                                                              |..........                                                            |  14%
+  ordinary text without R code
+
+  |                                                                              |....................                                                  |  29%
+label: setup (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |                                                                              |..............................                                        |  43%
+   inline R code fragments
+
+  |                                                                              |........................................                              |  57%
+label: linea de tiempo (with options) 
+List of 1
+ $ echo: logi FALSE
+
+  |                                                                              |..................................................                    |  71%
+  ordinary text without R code
+
+  |                                                                              |............................................................          |  86%
+label: r nuevos casos (with options) 
+List of 1
+ $ echo: logi FALSE
+
+  |                                                                              |......................................................................| 100%
+  ordinary text without R code
+
+
+output file: index.knit.md
+
+/Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS index.utf8.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output index.html --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/lua/pagebreak.lua --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/lua/latex-div.lua --self-contained --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/4.0/Resources/library/prettydoc/resources/templates/cayman.html --highlight-style pygments --include-in-header /tmp/Rtmp3rdODF/rmarkdown-strcc1b7e1a7e0e.html --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' --css index_files/style.css 
+
+Output created: index.html
+Warning messages:
+1: In in_dir(input_dir(), evaluate(code, envir = env, new_device = FALSE,  :
+  You changed the working directory to /Users/jose/Monitoreo Covid-19 Bolivia/data (probably via setwd()). It will be restored to /Users/jose/Monitoreo Covid-19 Bolivia/docs. See the Note section in ?knitr::knit
+2: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+3: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+4: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+5: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+6: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+7: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+8: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+9: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
